@@ -431,12 +431,7 @@ export default defineComponent({
 }
 
 .v-list-item--id {
-  display: none;
   transition: width .5s 1s ease-in-out;
-
-  @media (min-width: $break-width-xxs) {
-    display: block;
-  }
 
   @media (max-width: $break-width-reg) {
     width: 3rem !important;
