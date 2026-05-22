@@ -256,6 +256,7 @@ export default defineComponent({
     height: 100%;
     background: white;
     align-items: center;
+      z-index: 1;
 
     > * {
       display: block;
@@ -283,6 +284,16 @@ export default defineComponent({
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
         padding-right: 2rem;
+
+          &:after {
+              position: absolute;
+              content: '';
+              background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%);
+              right: 0;
+              top: 0;
+              width: 1rem;
+              height: 100%;
+          }
 
         &::-webkit-scrollbar {
           display: none;
@@ -402,6 +413,21 @@ export default defineComponent({
 .v-list-item--id,
 .v-list-item--title {
   font-weight: 500;
+}
+
+.v-list-item--title {
+  overflow: hidden;
+    position: relative;
+
+    &:after {
+        position: absolute;
+        content: '';
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%);
+        right: 0;
+        top: 0;
+        width: 1rem;
+        height: 100%;
+    }
 }
 
 .v-list-item--id {
